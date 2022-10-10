@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="card-sidebar">
+        <app-card *ngFor="let item of data;let i=index;" [data]='data[i]'></app-card>
+    </div>
+    <main>
+        <div class="search-field">
+            <input type="text">
+            <button (click)="triggerGetData()">Search</button>
+        </div>
+    </main>
+</div>
