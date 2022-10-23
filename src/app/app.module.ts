@@ -5,14 +5,20 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CardComponent } from './citycard/card/card.component';
-import { TemperatirePipe } from './temperature.pipe';
+import { TemperatirePipe } from './../assets/temperature.pipe';
 import { AppRoutingModule } from './app-routing.module';
+import { FeaturedCityComponent } from './featured-city/featured-city.component';
+import { ForecastComponent } from './forecast/forecast.component';
+import { DayOfTheWeekPipe } from '../assets/day-of-the-week.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    TemperatirePipe
+    TemperatirePipe,
+    FeaturedCityComponent,
+    ForecastComponent,
+    DayOfTheWeekPipe
   ],
   imports: [
     BrowserModule,

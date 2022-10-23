@@ -4,3 +4,7 @@ export interface CityData {
     degree: number;
     icon: string;
 }
+
+export interface WeeklyForecast {
+    degree:number; date:string; phrase:string;
+}

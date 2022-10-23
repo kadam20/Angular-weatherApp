@@ -1,0 +1,18 @@
+<div class="feature">
+    <div class="feature-degree"><h1>{{today.degree | temperaturePipe}}</h1></div>
+    <div class="feature-data">
+        <h1>{{cityName}}</h1>
+        <h1>{{today.date | dayOfTheWeek}}</h1>
+        <h1>{{today.phrase}}</h1>
+        <h1>2022.10.25 10:20</h1>
+    </div>
+</div>
+<div class="forecast-container">
+    <forecast 
+        *ngFor="let data of forecast;let i=index;" 
+        [degree]='forecast[i].degree'
+        [date]='forecast[i].date'
+        [phrase]='forecast[i].phrase'
+        [i]='i'>
+    </forecast>
+</div>

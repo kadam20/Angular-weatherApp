@@ -1,11 +1,30 @@
 <div class="container">
     <div class="card-sidebar">
-        <app-card *ngFor="let item of data;let i=index;" [data]='data[i]'></app-card>
+        <app-card (getData)="getData($event)" (deleteCity)="deleteCity($event)" *ngFor="let item of defaultCities;let i=index;" [cityName]='defaultCities[i]' [index]="i"></app-card>
     </div>
     <main>
-        <div class="search-field">
-            <input type="text">
-            <button (click)="triggerGetData()">Search</button>
+   
+        <div class="input-contaier">
+            <input [(ngModel)]="cityName" type="text">
+            <button (click)="changeCity()" class="change-city">Search</button>
+            <button (click)="addCity()" class="del-city">Add</button>
         </div>
+            <div class="feature">
+                <div class="feature-degree"><h1>{{today.degree | temperaturePipe}}</h1></div>
+                <div class="feature-data">
+                    <h1>{{name}}</h1>
+                    <h1>{{today.phrase}}</h1>
+                    <h1>{{today.date}}</h1>
+                </div>
+            </div>
+            <div class="forecast-container">
+                <forecast 
+                    *ngFor="let data of featuredData;let i=index;" 
+                    [degree]='featuredData[i].degree'
+                    [date]='featuredData[i].date'
+                    [phrase]='featuredData[i].phrase'
+                    [i]='i'>
+                </forecast>
+            </div>
     </main>
 </div>

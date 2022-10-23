@@ -1,10 +1,14 @@
 <div class="card-container">
+    <div class="card-buttons">
+        <button (click)="delete()" style="background:#fbc2eb;">Del</button>
+        <button (click)="add()" style="background:#a6c1ee;">Check</button>
+    </div>
     <div class="location">
-        <h1>{{data.cityName}}</h1>
-        <p>{{data.state}}</p>
+        <h1>{{displayedData.cityName}}</h1>
+        <p>{{displayedData.state}}</p>
     </div>
     <div class="weather-data">
-        <h1>{{data.degree | temperaturePipe}}</h1>
-        <img src="../assets/pictures/cloudy.png">
+        <h1>{{displayedData.degree | temperaturePipe}}</h1>
+        <img [src]="displayedData.icon">
     </div>
 </div>

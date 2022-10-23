@@ -3,6 +3,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({name: 'temperaturePipe'})
 export class TemperatirePipe implements PipeTransform{
     transform(value: number): string {
-        return `${value}°C`
+        return `${Math.round((value*100)/100)}°C`
     }
 }
